@@ -1,0 +1,18 @@
+case = int(input())
+vps = []
+
+for i in range(case):
+    vps.append(input())
+
+for i in range(len(vps)):
+    stack = []
+    result = ''
+    for x in vps[i]:
+        if x == '(':
+            stack.append(x)
+        elif x == ')' and '(' in stack:
+            stack.remove('(')
+        else:
+            stack.append(x)
+    result = 'YES' if not stack else 'NO'
+    print(result)
