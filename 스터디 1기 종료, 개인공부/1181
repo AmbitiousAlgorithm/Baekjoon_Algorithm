@@ -1,0 +1,16 @@
+from operator import itemgetter
+from itertools import groupby
+
+# 1~20000을 넘지 않는 단어 개수가 입력되면
+num = int(input())
+case = []
+
+if num <= 20000:
+    for i in range(num):
+        input_case = input()   #문자열 길이 50으로 제한 추가하기
+        case.append(input_case.lower()) # 알파벳 소문자 N개의 단어가 들어옴
+        
+sortlist = sorted(case, key = lambda x : (len(x), x)) # 길이가 짧은 것부터, 길이가 같으면 사전 순으로
+result = list(map(itemgetter(0), groupby(sortlist)))
+print('\n'.join(result)) 
+# 같은 단어가 입력된 경우엔 한 번만.
