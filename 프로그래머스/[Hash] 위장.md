@@ -45,3 +45,4 @@ def solution(clothes):
 
 <img width="598" alt="Screen Shot 2020-09-17 at 5 05 32 PM" src="https://user-images.githubusercontent.com/35520314/93438698-9f8b9100-f908-11ea-8ccf-afd6e226edfa.png">
 
+참고할만한 블로그 : https://djangoworld.tistory.com/9
