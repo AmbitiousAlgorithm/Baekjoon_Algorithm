@@ -47,5 +47,3 @@ clear() | 큐 비우기
 
 참고 : https://han-py.tistory.com/29
 
-
-e
