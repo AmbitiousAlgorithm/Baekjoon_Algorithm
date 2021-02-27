@@ -146,3 +146,23 @@ https://huidea.tistory.com/90
 
 4) dx dy 등으로 좌표를 이동해서 순회하면서 이게 맞는 값인지 체크하는 문제 ---> 큐 
 방문 리스트를 만드는 것이 좋다.
+
+
+
+def main():
+    p, n, h = map(int,input().split())
+    customers = {}
+    income = 0
+    
+    if n == 0 or h == 0:
+        income = 0
+    
+    for _ in range(n):
+        x, y = map(int,input().split())
+        customers[x] = y
+        
+    # y 기준으로 y 기준으로 정렬하기
+    sorted(customers.items(), key = lambda x:x[1])
+    
+    print(customers)
+    # for pc in range(p
