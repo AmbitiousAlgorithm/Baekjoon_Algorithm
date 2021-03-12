@@ -1,23 +1,16 @@
-def solution(N, target):
+def solution(citations):
+    # h = 0
+    citations.sort(reverse= True)
     
-    num_list = list({int(i*str(N))} for i in range(1,9))
-    
-    for i, number in enumerate(num_list, start = 1):
-        for j in range(i):
-            for x in num_list[j]:
-                for y in num_list[i-j-1]:
-                    num_list[i].add(x+y)
-                    num_list[i].add(x-y)
-                    num_list[i].add(x*y)
-                    if y != 0:
-                        num_list[i].add(x//y)
-        if target in num_list[i]:
-            return i+1
-    
-    return -1
+    for i, citation in enumerate(citations):
+        h = len(citations[:i])
+        if citation >= h:
+            h += 1
+        else:
+            break
+        
+    return h
 
 if __name__ == '__main__':
-    N = 2
-    target = 11
-    result = solution(N, target)
+    result = solution([10, 50, 100])
     print(result)
