@@ -1,16 +1,14 @@
-def solution(citations):
-    # h = 0
-    citations.sort(reverse= True)
-    
-    for i, citation in enumerate(citations):
-        h = len(citations[:i])
-        if citation >= h:
-            h += 1
-        else:
-            break
-        
-    return h
+def solution(num, k):
+
+    divisor = []
+
+    for n in range(1, num):
+        if num % n == 0:
+            divisor.append(n)
+    divisor.append(num)
+
+    return divisor[k]
 
 if __name__ == '__main__':
-    result = solution([10, 50, 100])
+    result = solution(6,3)
     print(result)
